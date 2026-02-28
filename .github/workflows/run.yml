@@ -24,7 +24,7 @@ jobs:
           python -m playwright install chromium
 
       - name: Run script
-        run: python main.py
+        run: python timetable.py
 
       - name: Commit image
         run: |
