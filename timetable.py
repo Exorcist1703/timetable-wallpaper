@@ -40,7 +40,11 @@ data = {
 }
 
 response = session.post(url, params=params, data=data, headers=headers)
-result_json = response.json()
+# result_json = response.json()
+print("STATUS:", response.status_code)
+print("TEXT:")
+print(response.text)
+exit()
 
 schedule = result_json.get("data", {}).get("days", {})
 lessons = schedule.get(today)
@@ -195,3 +199,4 @@ with sync_playwright() as p:
     browser.close()
 
 print("schedule.png")
+
